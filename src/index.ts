@@ -5,7 +5,9 @@ import { MongoConnection } from './database/MongoConnection'
 require('dotenv').config();
 
 const api = express();
+const BASE_URL = process.env.URL || 'http://localhost';
 const PORT = process.env.PORT || 5000;
+
 
 api.use(express.json());
 
@@ -17,4 +19,4 @@ api.post('/shorten', urlController.shorten);
 api.get('/:hash', urlController.redirect);
 api.get('/', urlController.list);
 
-api.listen(PORT, () => console.log(`⚡️[server]: Server is running at ${process.env.URL}:${PORT}`));
+api.listen(PORT, () => console.log(`⚡️[server]: Server is running at ${BASE_URL}:${PORT}`));
