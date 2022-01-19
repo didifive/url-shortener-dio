@@ -44,14 +44,9 @@ Para configurar seu banco de dados MongoDB, basta atualizar a variável de ambie
 ---
 
 Abaixo seguem modificações feitas em relação ao projeto base:
-* Criado o método `list` para listar todas as URLs já encurtadas pela aplicação, o endpoint "/";
+* Criado o método `list` para listar todas as URLs já encurtadas pela aplicação, utilizando o endpoint `GET /`;
 * Criado arquivo `.env` com variável `MONGO_STRING_CONN` para guardar a string de conexão ao banco, a URL e a porta que a aplicação utilizará;
 * Criado o arquivo `.env.example` como exemplo (template) do arquivo `.env` visto que este não ficará disponível no repositório remoto (GitHub).
-
-
----
-
-Projeto online em: [didifive/url-shortener-dio](https://url-shortener-dio.netlify.app)  
 
 
 ---
@@ -73,7 +68,7 @@ Links Interessantes:
 
 - [Node.js]
 - [TypeScript]
-- [Netlify]
+- [MongoDB]
 
 
 [dio.me]: https://dio.me/
@@ -83,4 +78,3 @@ Links Interessantes:
 [TypeScript]: https://www.typescriptlang.org/
 [Node.js]: https://nodejs.org/
 [MongoDB]: https://cloud.mongodb.com/
-[Netlify]: https://www.netlify.com/
