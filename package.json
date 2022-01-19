@@ -4,18 +4,23 @@
 	"description": "URL Shortener for DIO Project",
 	"main": "index.js",
 	"scripts": {
+		"dev": "nodemon src/index.ts",
 		"build:watch": "tsc -w",
 		"build": "tsc",
-		"dev": "nodemon ./dist/index.js",
+		"postbuild": "nodemon ./dist/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "alexiadorneles",
+	"contributors": [
+		"Luis Carlos Didi (https://github.com/didifive)"
+	],
 	"license": "ISC",
 	"dependencies": {
 		"@hasezoey/typegoose": "^5.9.2",
 		"@typescript-eslint/eslint-plugin": "^4.0.1",
 		"@typescript-eslint/parser": "^4.0.1",
 		"cors": "^2.8.5",
+		"dotenv": "^14.2.0",
 		"eslint": "^7.8.1",
 		"express": "^4.17.1",
 		"mongoose": "^5.10.6",

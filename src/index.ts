@@ -2,14 +2,19 @@ import express from 'express'
 import { URLController } from './controller/URLController'
 import { MongoConnection } from './database/MongoConnection'
 
-const api = express()
-api.use(express.json())
+require('dotenv').config();
 
-const database = new MongoConnection()
-database.connect()
+const api = express();
+const PORT = process.env.PORT || 5000;
 
-const urlController = new URLController()
-api.post('/shorten', urlController.shorten)
-api.get('/:hash', urlController.redirect)
+api.use(express.json());
 
-api.listen(5000, () => console.log('Express listening'))
+const database = new MongoConnection();
+database.connect();
+
+const urlController = new URLController();
+api.post('/shorten', urlController.shorten);
+api.get('/:hash', urlController.redirect);
+api.get('/', urlController.list);
+
+api.listen(PORT, () => console.log(`⚡️[server]: Server is running at ${process.env.URL}:${PORT}`));
