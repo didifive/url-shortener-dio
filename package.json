@@ -7,7 +7,6 @@
 		"dev": "nodemon src/index.ts",
 		"build:watch": "tsc -w",
 		"build": "tsc",
-		"postbuild": "nodemon ./dist/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "alexiadorneles",
