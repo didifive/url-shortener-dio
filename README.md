@@ -64,11 +64,53 @@ Endpoints da API:
 
 ---
 
+### O projeto 
+Para hospedar o projeto no [Heroku] tive que realizar os seguintes passos:
+* 1- No arquivo `package.json` foi adicionado o atributo `start` dentro de `scripts`:
+```json
+		"start": "node dist/index.js"
+```
+* 2- Foi adicionado um novo item, o `engine` também no `package.json`, contendo as versões no npm e node:
+```json
+	"engines": {
+		"npm": "8.3.0",
+		"node": "14.18.0"
+	},
+```
+* 3- Foram adicionadas as variáveis de ambiente no Heroku, sendo elas:
+<table>
+   <thead>
+      <tr>
+         <th>KEY</th>
+         <th>VALUE</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>NODE_MODULES_CACHE</td>
+         <td>false</td>
+      </tr>
+      <tr>
+         <td>USE_NPM_INSTALL</td>
+         <td>true</td>
+      </tr>
+   </tbody>
+</table>
+
+Observações:
+* Não esquecer de criar as variáveis de ambiente do arquivo `.env` que utilizou no projeto local nas configurações do [Heroku];
+* Caso tenha atualizado as versões do npm ou node no projeto local, então deve-se alterar as versões mencionadas no passo 2. Para confirmar a versão, basta rodar os comandos `npm -v` e `node -v` na pasta do projeto.
+
+Fonte: [When NPM miss with Heroku, How To Solve (npm ERR! Failed at the <module> start script).](https://dev.to/mohammedayman2018/when-npm-miss-with-heroku-how-to-solve-npm-err-failed-at-the-module-start-script-9nh)
+
+---
+
 Links Interessantes:  
 
 - [Node.js]
 - [TypeScript]
 - [MongoDB]
+- [Heroku]
 
 
 [dio.me]: https://dio.me/
@@ -78,3 +120,4 @@ Links Interessantes:
 [TypeScript]: https://www.typescriptlang.org/
 [Node.js]: https://nodejs.org/
 [MongoDB]: https://cloud.mongodb.com/
+[Heroku]: https://heroku.com/
