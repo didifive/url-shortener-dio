@@ -1,11 +1,15 @@
 require('dotenv').config();
 
-let PORT;
-if (process.env.PORT) {
-	PORT = `:${process.env.PORT}`
+let URL = process.env.URL;
+if (URL = 'http://localhost') {
+	let PORT;
+	if (process.env.PORT) {
+		PORT = `:${process.env.PORT}`
+	}
+	URL += PORT;
 }
 
 export const config = {
-	API_URL: `${process.env.URL}${PORT}`,
+	API_URL: `${URL}`,
 	MONGO_CONNECTION:	process.env.MONGO_STRING_CONN,
 }
