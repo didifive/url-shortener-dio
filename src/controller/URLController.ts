@@ -31,6 +31,9 @@ export class URLController {
 
 	public async list(req: Request, response: Response): Promise<void> {
 		const url = await URLModel.find({});
+		url.forEach( (u) => {
+			u.shortURL = `${config.API_URL}/${u.hash}`;
+		});
 		if (url) {
 			response.status(200).json(url);
 			return

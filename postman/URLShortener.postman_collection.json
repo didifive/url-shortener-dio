@@ -6,67 +6,146 @@
 	},
 	"item": [
 		{
-			"name": "List URL(s) Shortened(s)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "URL Shorten",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{ \r\n    \"originURL\": \"https://www.google.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "List URL(s) Shortened(s)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:5000/shorten",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"shorten"
-					]
+				{
+					"name": "URL Shorten",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"originURL\": \"https://www.google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/shorten",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"shorten"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REDIRECT to URL Shortened",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/8nHCL4ags",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"8nHCL4ags"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "REDIRECT to URL Shortened",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:5000/8nHCL4ags",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"8nHCL4ags"
-					]
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "List URL(s) Shortened(s)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://url-shortener-didi.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"url-shortener-didi",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "URL Shorten",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"originURL\": \"https://www.twitter.com/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://url-shortener-didi.herokuapp.com/shorten",
+							"protocol": "https",
+							"host": [
+								"url-shortener-didi",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"shorten"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REDIRECT to URL Shortened",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://url-shortener-didi.herokuapp.com/8nHCL4ags",
+							"protocol": "https",
+							"host": [
+								"url-shortener-didi",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"8nHCL4ags"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

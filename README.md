@@ -46,7 +46,9 @@ Para configurar seu banco de dados MongoDB, basta atualizar a variável de ambie
 Abaixo seguem modificações feitas em relação ao projeto base:
 * Criado o método `list` para listar todas as URLs já encurtadas pela aplicação, utilizando o endpoint `GET /`;
 * Criado arquivo `.env` com variável `MONGO_STRING_CONN` para guardar a string de conexão ao banco, a URL e a porta que a aplicação utilizará;
-* Criado o arquivo `.env.example` como exemplo (template) do arquivo `.env` visto que este não ficará disponível no repositório remoto (GitHub).
+* Criado o arquivo `.env.example` como exemplo (template) do arquivo `.env` visto que este não ficará disponível no repositório remoto (GitHub);
+* Foi criada condição no arquivo `Constants.ts` do pacote `config` para evitar salvar porta quando não estiver em local host, no Heroku, mesmo setando a variável PORT, o mesmo gerava valores aleatórios;
+* No métido `list` do `URLController`, foi criado um forEach para que o atributo `shortURL` esteja alinhado com o servidor (localhost, Heroku etc).
 
 
 ---
