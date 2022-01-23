@@ -14,6 +14,10 @@
 	"contributors": [
 		"Luis Carlos Didi (https://github.com/didifive)"
 	],
+	"engines": {
+		"npm": "8.3.0",
+		"node": "14.18.0"
+	},
 	"license": "ISC",
 	"dependencies": {
 		"@hasezoey/typegoose": "^5.9.2",
