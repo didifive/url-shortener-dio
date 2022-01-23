@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 let URL = process.env.URL;
-if (URL = 'http://localhost') {
+if (URL === 'http://localhost') {
 	let PORT;
 	if (process.env.PORT) {
 		PORT = `:${process.env.PORT}`
